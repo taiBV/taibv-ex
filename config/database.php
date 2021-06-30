@@ -118,30 +118,51 @@ return [
     */
 
     'redis' => [
-
-        'client' => env('REDIS_CLIENT', 'phpredis'),
-
+        'clusters' => [
+            'default' => [
+                [
+                    'host' => env('REDIS_HOST_1', '172.25.80.77'),
+                    'password' => null,
+                    'port' => env('REDIS_PORT_1', '30001'),
+                    'database' => 0,
+                    'read_write_timeout' => 10,// Timeout after 10 seconds
+                ],[
+                    'host' => env('REDIS_HOST_1', '172.25.80.77'),
+                    'password' => null,
+                    'port' => env('REDIS_PORT_2', '30002'),
+                    'database' => 0,
+                    'read_write_timeout' => 10,// Timeout after 10 seconds
+                ],[
+                    'host' => env('REDIS_HOST_2', '172.25.80.78'),
+                    'password' => null,
+                    'port' => env('REDIS_PORT_3', '30001'),
+                    'database' => 0,
+                    'read_write_timeout' => 10,// Timeout after 10 seconds
+                ],[
+                    'host' => env('REDIS_HOST_2', '172.25.80.78'),
+                    'password' => null,
+                    'port' => env('REDIS_PORT_4', '30002'),
+                    'database' => 0,
+                    'read_write_timeout' => 10,// Timeout after 10 seconds
+                ],[
+                    'host' => env('REDIS_HOST_3', '172.25.80.79'),
+                    'password' => null,
+                    'port' => env('REDIS_PORT_5', '30001'),
+                    'database' => 0,
+                    'read_write_timeout' => 10,// Timeout after 10 seconds
+                ],[
+                    'host' => env('REDIS_HOST_3', '172.25.80.79'),
+                    'password' => null,
+                    'port' => env('REDIS_PORT_6', '30002'),
+                    'database' => 0,
+                    'read_write_timeout' => 10,// Timeout after 10 seconds
+                ]
+            ]
+        ],
+        'client' => 'predis',
         'options' => [
-            'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
-        ],
-
-        'default' => [
-            'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', '6379'),
-            'database' => env('REDIS_DB', '0'),
-        ],
-
-        'cache' => [
-            'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', '6379'),
-            'database' => env('REDIS_CACHE_DB', '1'),
-        ],
-
+            'cluster' => 'redis'
+        ]
     ],
 
 ];
