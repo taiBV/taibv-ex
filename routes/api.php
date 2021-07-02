@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/event', [\App\Http\Controllers\Api\EventController::class, 'index']);
+Route::post('/event/create', [\App\Http\Controllers\Api\EventController::class, 'store']);
+Route::get('/event/lastest', [\App\Http\Controllers\Api\EventController::class, 'lastest']);

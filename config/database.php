@@ -121,39 +121,9 @@ return [
         'clusters' => [
             'default' => [
                 [
-                    'host' => env('REDIS_HOST_1', '172.25.80.77'),
+                    'host' => env('REDIS_HOST_1', '172.16.7.240'),
                     'password' => null,
                     'port' => env('REDIS_PORT_1', '30001'),
-                    'database' => 0,
-                    'read_write_timeout' => 10,// Timeout after 10 seconds
-                ],[
-                    'host' => env('REDIS_HOST_1', '172.25.80.77'),
-                    'password' => null,
-                    'port' => env('REDIS_PORT_2', '30002'),
-                    'database' => 0,
-                    'read_write_timeout' => 10,// Timeout after 10 seconds
-                ],[
-                    'host' => env('REDIS_HOST_2', '172.25.80.78'),
-                    'password' => null,
-                    'port' => env('REDIS_PORT_3', '30001'),
-                    'database' => 0,
-                    'read_write_timeout' => 10,// Timeout after 10 seconds
-                ],[
-                    'host' => env('REDIS_HOST_2', '172.25.80.78'),
-                    'password' => null,
-                    'port' => env('REDIS_PORT_4', '30002'),
-                    'database' => 0,
-                    'read_write_timeout' => 10,// Timeout after 10 seconds
-                ],[
-                    'host' => env('REDIS_HOST_3', '172.25.80.79'),
-                    'password' => null,
-                    'port' => env('REDIS_PORT_5', '30001'),
-                    'database' => 0,
-                    'read_write_timeout' => 10,// Timeout after 10 seconds
-                ],[
-                    'host' => env('REDIS_HOST_3', '172.25.80.79'),
-                    'password' => null,
-                    'port' => env('REDIS_PORT_6', '30002'),
                     'database' => 0,
                     'read_write_timeout' => 10,// Timeout after 10 seconds
                 ]
